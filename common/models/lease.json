@@ -1,0 +1,46 @@
+{
+  "name": "lease",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "booking_man": {
+      "type": "string"
+    },
+    "booking_phone": {
+      "type": "string"
+    },
+    "booking_time": {
+      "type": "date",
+      "description": "签订预定书日期 "
+    },
+    "status": {
+      "type": "number",
+      "default": 0,
+      "description": "招租状态,0-未发布,1发布,2完结"
+
+    },
+    "merchants": {
+      "type": "string",
+      "description": "招商人"
+    },
+    "remark": {
+      "type": "string",
+      "description": "备注"
+    },
+    "sort": {
+      "type": "number",
+      "description": "排序号,越高排越前面",
+      "default": 10
+    }
+  },
+  "validations": [],
+  "relations": {
+    "shop": {
+      "type": "belongsTo",
+      "model": "shop",
+      "foreignKey": "shopId"
+    }
+  },
+  "acls": [],
+  "methods": []
+}

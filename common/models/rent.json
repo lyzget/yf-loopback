@@ -1,0 +1,66 @@
+{
+  "name": "rent",
+  "plural": "rents",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "string",
+      "description": "联系人"
+    },
+    "type": {
+      "type": "number",
+      "description": "招租类型,0未分类,1,一手招租;2,二手转租"
+    },
+    "rent_type": {
+      "type": "string",
+      "description": "出租形式:出租,出租一半,转让"
+    },
+    "region": {
+      "type": "string",
+      "description": "所属区域"
+    },
+    "check_flag": {
+      "type": "boolean",
+      "description": "审核标识,0未审核,1审核"
+    },
+    "show_flag": {
+      "type": "boolean",
+      "description": "是否在前台显示，0不显示,1显示"
+    },
+    "start_time": {
+      "type": "date",
+      "description": "是否在前台显示，0不显示,1显示"
+    },
+    "end_time": {
+      "type": "date",
+      "description": "是否在前台显示，0不显示,1显示"
+    },
+    "memo": {
+      "type": "string",
+      "description": "备注"
+    },
+    "creator": {
+      "type": "string",
+      "description": "创建人id"
+    },
+    "creator_type": {
+      "type": "string",
+      "description": "创建人类型,0后台管理员,1 微信客户"
+    }
+
+  },
+  "validations": [],
+  "relations": {
+
+  },
+  "acls": [],
+  "methods": []
+}

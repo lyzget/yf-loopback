@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "product": {
+    "dataSource": "db",
+    "public": true
+  },
+  "brand": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ACL": {
+    "dataSource": "mysql",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "mysql",
+    "public": false,
+    "relations": {
+      "user": {
+        "type": "belongsTo",
+        "model": "user",
+        "foreignKey": "userId"
+      }
+    }
+  },
+  "RoleMapping": {
+    "dataSource": "mysql",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "mysql",
+    "public": false
+  },
+  "user": {
+    "dataSource": "mysql",
+    "public": true,
+    "relations": {
+      "accessTokens": {
+        "type": "hasMany",
+        "model": "AccessToken",
+        "foreignKey": "userId",
+        "options": {
+          "disableInclude": true
+        }
+      }
+    }
+  },
+  "rent": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "shop": {
+    "dataSource": "mysql",
+    "public": true,
+    "relations": {
+      "leases": {
+        "type": "hasMany",
+        "model": "lease",
+        "foreignKey": "shopId",
+        "options": {
+          "disableInclude": true
+        }
+      }
+    }
+  },
+  "lease": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "sublease": {
+    "dataSource": "mysql",
+    "public": true
+  }
+
+}

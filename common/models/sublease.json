@@ -1,0 +1,43 @@
+{
+  "name": "sublease",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "string",
+      "description": "联系人"
+    },
+    "type": {
+      "type": "string",
+      "default": "1",
+      "description": "出租形式:出租,出租一半,转让,可多选"
+    },
+    "status": {
+      "type": "number",
+      "default": 0,
+      "description": "状态:0-未发布,1发布,2完结"
+    },
+    "sort": {
+      "type": "number",
+      "description": "排序号,越高排越前面",
+      "default": 10
+    }
+  },
+  "validations": [],
+  "relations": {
+    "shop": {
+      "type": "belongsTo",
+      "model": "shop",
+      "foreignKey": "shopId"
+    }
+  },
+  "acls": [],
+  "methods": []
+}

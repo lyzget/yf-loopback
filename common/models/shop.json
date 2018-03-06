@@ -1,0 +1,52 @@
+{
+  "name": "shop",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "hidden": [],
+  "scope": {},
+  "properties": {
+    "id": {"type": "number", "generated": true, "id": true},
+    "name": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string",
+      "description": "所属区域"
+    },
+    "sort": {
+      "type": "number",
+      "description": "排序号,越高排越前面",
+      "default": 10
+    },
+    "status": {
+      "type": "number",
+      "description": "状态",
+      "default": 0
+    },
+    "area": {
+      "type": "number",
+      "description": "面积",
+      "default": 0
+    },
+    "rent_area": {
+      "type": "number",
+      "description": "计租面积",
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {
+    "leases": {
+      "type": "hasMany",
+      "model": "lease",
+      "foreignKey": "shopId"
+    },
+    "subleases": {
+      "type": "hasMany",
+      "model": "sublease",
+      "foreignKey": "shopId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
